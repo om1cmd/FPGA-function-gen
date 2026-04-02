@@ -7,4 +7,4 @@ Our functino generator has following functions:
 
 2. Ability to change signal period
 
-The output is routed to Pmod headers and converted to analog voltages using R-2R DAC.
+The output is routed to Pmod headers and converted to analog voltages using external DAC.
