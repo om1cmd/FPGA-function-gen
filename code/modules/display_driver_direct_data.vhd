@@ -7,7 +7,7 @@ entity display_driver is
     Port (
         clk   : in  STD_LOGIC;
         rst   : in  STD_LOGIC;
-        data  : in  STD_LOGIC_VECTOR(31 downto 0);
+        data  : in  STD_LOGIC_VECTOR(27 downto 0);
         seg   : out STD_LOGIC_VECTOR(7 downto 0);
         anode : out STD_LOGIC_VECTOR(3 downto 0)
     );
@@ -41,7 +41,7 @@ architecture Behavioral of display_driver is
     -- Internal signals
     signal sig_en    : std_logic;
     signal sig_digit : std_logic_vector(1 downto 0);
-    signal sig_seg   : std_logic_vector(7 downto 0);
+    signal sig_seg   : std_logic_vector(6 downto 0);
     
 begin
 
@@ -71,10 +71,10 @@ begin
     ------------------------------------------------------------------------
     -- Digit select
     ------------------------------------------------------------------------
-    sig_seg <= data(7 downto 0) when sig_digit = "00" else
-               data(15 downto 8) when sig_digit = "01" else
-               data(23 downto 16) when sig_digit = "10" else
-               data(31 downto 24);
+    sig_seg <= data(6 downto 0) when sig_digit = "00" else
+               data(13 downto 7) when sig_digit = "01" else
+               data(20 downto 14) when sig_digit = "10" else
+               data(27 downto 21);
 
     ------------------------------------------------------------------------
     -- Anode select process
