@@ -1,4 +1,4 @@
-# FPGA function generator
+# Tri-Saw-Square Generator 5000 OMAMA
 Our functino generator has following functions:
 1. Ability to generate 3 different waveforms
     - sawtooth
