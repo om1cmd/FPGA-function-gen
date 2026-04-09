@@ -9,7 +9,7 @@ entity gen_sqr is
            rst : in STD_LOGIC;
            per_lim : in unsigned (9 downto 0);
            dac_out : out STD_LOGIC_VECTOR (7 downto 0));
-end gen_sqr;
+end entity gen_sqr;
 
 -------------------------------------------------
 
