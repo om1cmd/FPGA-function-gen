@@ -1,6 +1,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
+-------------------------------------------------
+
 entity clk_en is
     generic (
         G_MAX: positive := 5 -- Default number of clock cycles
@@ -9,7 +11,9 @@ entity clk_en is
            rst: in STD_LOGIC;
            ce: out STD_LOGIC
        );
-end clk_en;
+end entity clk_en;
+
+-------------------------------------------------
 
 architecture Behavioral of clk_en is
 signal s_cnt: integer range 0 to G_MAX - 1;

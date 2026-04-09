@@ -1,6 +1,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
+-------------------------------------------------
+
 entity display_driver is
     Port (
         clk   : in  STD_LOGIC;
@@ -10,6 +12,8 @@ entity display_driver is
         anode : out STD_LOGIC_VECTOR(1 downto 0)
     );
 end display_driver;
+
+-------------------------------------------------
 
 architecture Behavioral of display_driver is
 
