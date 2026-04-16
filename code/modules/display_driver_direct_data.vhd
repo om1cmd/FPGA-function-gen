@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -------------------------------------------------
 
-entity display_driver is
+entity display_driver_direct_data is
     Port (
         clk   : in  STD_LOGIC;
         rst   : in  STD_LOGIC;
@@ -11,11 +11,11 @@ entity display_driver is
         seg   : out STD_LOGIC_VECTOR(7 downto 0);
         anode : out STD_LOGIC_VECTOR(3 downto 0)
     );
-end display_driver;
+end display_driver_direct_data;
 
 -------------------------------------------------
 
-architecture Behavioral of display_driver is
+architecture Behavioral of display_driver_direct_data is
 
     -- Component declaration for clock enable
     component clk_en is
