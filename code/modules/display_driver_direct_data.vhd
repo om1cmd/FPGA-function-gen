@@ -8,7 +8,7 @@ entity display_driver_direct_data is
         clk   : in  STD_LOGIC;
         rst   : in  STD_LOGIC;
         data  : in  STD_LOGIC_VECTOR(27 downto 0);
-        seg   : out STD_LOGIC_VECTOR(7 downto 0);
+        seg   : out STD_LOGIC_VECTOR(6 downto 0);
         anode : out STD_LOGIC_VECTOR(3 downto 0)
     );
 end display_driver_direct_data;
