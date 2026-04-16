@@ -5,7 +5,7 @@ use ieee.std_logic_1164.all;
 
 entity sig_name_encoder is
     port (
-        cnt : in std_logic_vector(3 downto 0);     --! Signal select counter value
+        cnt : in std_logic_vector(1 downto 0);     --! Signal select counter value
         data : out std_logic_vector(27 downto 0)   --! Data for display_driver module
     );
 end entity sig_name_encoder;
@@ -18,13 +18,13 @@ begin
 text_encoder : process (cnt) is
 begin
     case cnt is
-        when x"0" =>
+        when b"00" =>
             data <= b"1110000_1111010_1100010_1000011"; -- troJ
-        when x"1" =>
+        when b"01" =>
             data <= b"1111111_1100010_1100000_1000010"; -- -obd
-        when x"2" =>
+        when b"10" =>
             data <= b"0011000_1001111_1110001_0001000"; -- PILA
-        when x"3" =>
+        when b"11" =>
             data <= b"1111111_0100100_1001111_1101001"; -- -SIn
 
         -- Default case
