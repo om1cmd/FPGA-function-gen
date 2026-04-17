@@ -136,7 +136,7 @@ begin
             clk => clk,
             rst => btnc,
             data => sig_sig_name,
-            seg => seg(7 downto 4),
+            seg => seg,
             anode => an(7 downto 4)
         );
     
