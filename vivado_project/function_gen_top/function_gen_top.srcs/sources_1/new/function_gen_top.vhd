@@ -57,6 +57,16 @@ architecture Behavioral of function_gen_top is
         );
     end component display_driver_direct_data;
     
+    component clk_en is 
+       Generic( G_MAX : positive := 5);
+       Port(
+           clk:in STD_LOGIC;
+           rst:in STD_LOGIC;
+           ce :out STD_LOGIC
+       );
+       
+    end component clk_en;
+    
     signal sig_btnu : STD_LOGIC;
     signal sig_btnd : STD_LOGIC;
     signal sig_btnr : STD_LOGIC;
@@ -64,6 +74,10 @@ architecture Behavioral of function_gen_top is
     signal sig_sig_select : STD_LOGIC_VECTOR(1 downto 0);
     signal sig_per_select : STD_LOGIC_VECTOR(1 downto 0);
     signal sig_sig_name : STD_LOGIC_VECTOR(27 downto 0);
+    signal sig_en_1 : STD_LOGIC;
+    signal sig_en_2 : STD_LOGIC;
+    signal sig_en_3 : STD_LOGIC;
+    signal sig_en_4 : STD_LOGIC;
 
 begin
 
@@ -139,6 +153,39 @@ begin
             seg => seg,
             anode => an(7 downto 4)
         );
+        
+     clk_en_1 : clk_en
+         generic map(G_MAX => 100_000)
+         port map(
+            clk => clk,
+            rst => btnc,
+            ce  => sig_en_1
+         );
+         
+     clk_en_2 : clk_en
+         generic map(G_MAX => 10_000)
+         port map(
+            clk => clk,
+            rst => btnc,
+            ce  => sig_en_2
+         );
+         
+      clk_en_3 : clk_en
+         generic map(G_MAX => 1000)
+         port map(
+            clk => clk,
+            rst => btnc,
+            ce  => sig_en_3
+         );
+         
+      clk_en_4 : clk_en
+         generic map(G_MAX => 100)
+         port map(
+            clk => clk,
+            rst => btnc,
+            ce  => sig_en_4
+         );
+         
     
     an(3 downto 0) <= b"1111";
     dp <= '1';
