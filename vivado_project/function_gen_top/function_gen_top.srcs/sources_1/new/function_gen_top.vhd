@@ -42,7 +42,8 @@ architecture Behavioral of function_gen_top is
 
     component sig_name_encoder is
         Port (
-            cnt : in STD_LOGIC_VECTOR(1 downto 0);
+            cnt_sig : in STD_LOGIC_VECTOR(1 downto 0);
+            cnt_per : in STD_LOGIC_VECTOR(1 downto 0);
             data : out STD_LOGIC_VECTOR(55 downto 0)
         );
     end component sig_name_encoder;
@@ -81,6 +82,7 @@ architecture Behavioral of function_gen_top is
 
 begin
 
+---------- debouncers ----------
     debounce_u : debounce
         port map (
             clk => clk,
@@ -117,6 +119,8 @@ begin
             btn_state => open
         );
 
+---------- counters ----------
+
     counter_sig_select : bidir_counter
         generic map (G_BITS => 2)
         port map (
@@ -139,9 +143,12 @@ begin
             cnt => sig_per_select
         );
 
+---------- display ----------
+
     sig_name_encoder_inst : sig_name_encoder
         port map (
-            cnt => sig_sig_select,
+            cnt_sig => sig_sig_select,
+            cnt_per => sig_per_select,
             data => sig_sig_name
         );
     
@@ -153,7 +160,9 @@ begin
             seg => seg,
             anode => an(7 downto 4)
         );
-        
+
+---------- clock enable ----------
+
      clk_en_1 : clk_en
          generic map(G_MAX => 100_000)
          port map(
