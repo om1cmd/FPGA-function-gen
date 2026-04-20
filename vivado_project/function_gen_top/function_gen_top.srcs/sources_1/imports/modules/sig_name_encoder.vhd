@@ -7,7 +7,7 @@ entity sig_name_encoder is
     port (
         cnt_sig : in std_logic_vector(1 downto 0);     -- Signal select counter value
         cnt_per : in std_logic_vector(1 downto 0);     -- Period select counter value
-        data : out std_logic_vector(27 downto 0)       -- Data for display_driver module
+        data : out std_logic_vector(55 downto 0)       -- Data for display_driver module
     );
 end entity sig_name_encoder;
 

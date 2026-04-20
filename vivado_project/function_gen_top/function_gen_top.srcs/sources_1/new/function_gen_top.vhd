@@ -43,7 +43,7 @@ architecture Behavioral of function_gen_top is
     component sig_name_encoder is
         Port (
             cnt : in STD_LOGIC_VECTOR(1 downto 0);
-            data : out STD_LOGIC_VECTOR(27 downto 0)
+            data : out STD_LOGIC_VECTOR(55 downto 0)
         );
     end component sig_name_encoder;
     
@@ -51,7 +51,7 @@ architecture Behavioral of function_gen_top is
         Port (
             clk : in STD_LOGIC;
             rst : in STD_LOGIC;
-            data : in STD_LOGIC_VECTOR(27 downto 0);
+            data : in STD_LOGIC_VECTOR(55 downto 0);
             seg : out STD_LOGIC_VECTOR(6 downto 0);
             anode : out STD_LOGIC_VECTOR(3 downto 0)
         );
@@ -73,7 +73,7 @@ architecture Behavioral of function_gen_top is
     signal sig_btnl : STD_LOGIC;
     signal sig_sig_select : STD_LOGIC_VECTOR(1 downto 0);
     signal sig_per_select : STD_LOGIC_VECTOR(1 downto 0);
-    signal sig_sig_name : STD_LOGIC_VECTOR(27 downto 0);
+    signal sig_sig_name : STD_LOGIC_VECTOR(55 downto 0);
     signal sig_en_1 : STD_LOGIC;
     signal sig_en_2 : STD_LOGIC;
     signal sig_en_3 : STD_LOGIC;
