@@ -68,13 +68,20 @@ architecture Behavioral of function_gen_top is
        
     end component clk_en;
     
+    ---------- buttons ----------
     signal sig_btnu : STD_LOGIC;
     signal sig_btnd : STD_LOGIC;
     signal sig_btnr : STD_LOGIC;
     signal sig_btnl : STD_LOGIC;
+
+    ---------- counters ----------
     signal sig_sig_select : STD_LOGIC_VECTOR(1 downto 0);
     signal sig_per_select : STD_LOGIC_VECTOR(1 downto 0);
+
+    ---------- display ----------
     signal sig_sig_name : STD_LOGIC_VECTOR(55 downto 0);
+
+    ---------- clock enable ----------
     signal sig_en_1 : STD_LOGIC;
     signal sig_en_2 : STD_LOGIC;
     signal sig_en_3 : STD_LOGIC;
