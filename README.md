@@ -10,4 +10,4 @@ Our function generator has following functions:
 The output is routed to Pmod headers and converted to analog voltages using external DAC.
 
 ## Block diagram
-![Block diagram](images/block_diagram.jpg)
+![Block diagram](images/block_diagram.png)
