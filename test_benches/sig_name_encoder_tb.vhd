@@ -29,17 +29,17 @@ begin
         cnt_sig <= "00";
         cnt_per <= "00";
 
-        wait for 10 ns;
+        wait for 100 ns;
 
         cnt_sig <= "01";
         cnt_per <= "01";
         
-        wait for 10 ns;
+        wait for 100 ns;
         
         cnt_sig <= "10";
         cnt_per <= "10";
 
-        wait for 10 ns;
+        wait for 100 ns;
 
         cnt_sig <= "11";
         cnt_sig <= "11";
