@@ -54,7 +54,7 @@ architecture Behavioral of function_gen_top is
             rst : in STD_LOGIC;
             data : in STD_LOGIC_VECTOR(55 downto 0);
             seg : out STD_LOGIC_VECTOR(6 downto 0);
-            anode : out STD_LOGIC_VECTOR(3 downto 0)
+            anode : out STD_LOGIC_VECTOR(7 downto 0)
         );
     end component display_driver_direct_data;
     
@@ -165,7 +165,7 @@ begin
             rst => btnc,
             data => sig_sig_name,
             seg => seg,
-            anode => an(7 downto 4)
+            anode => an
         );
 
 ---------- clock enable ----------
@@ -201,8 +201,6 @@ begin
             rst => btnc,
             ce  => sig_en_4
          );
-         
-    
-    an(3 downto 0) <= b"1111";
+
     dp <= '1';
 end Behavioral;
