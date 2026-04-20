@@ -1,28 +1,28 @@
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.std_logic_1164.ALL;
 
 entity function_gen_top is
-    Port ( clk : in STD_LOGIC;
-           btnu : in STD_LOGIC;
-           btnd : in STD_LOGIC;
-           btnl : in STD_LOGIC;
-           btnr : in STD_LOGIC;
-           btnc : in STD_LOGIC;
-           dp : out STD_LOGIC;
-           seg : out STD_LOGIC_VECTOR (6 downto 0);
-           an : out STD_LOGIC_VECTOR (7 downto 0);
-           ja : out STD_LOGIC_VECTOR (7 downto 0));
+    Port ( clk : in std_logic;
+           btnu : in std_logic;
+           btnd : in std_logic;
+           btnl : in std_logic;
+           btnr : in std_logic;
+           btnc : in std_logic;
+           dp : out std_logic;
+           seg : out std_logic_vector (6 downto 0);
+           an : out std_logic_vector (7 downto 0);
+           ja : out std_logic_vector (7 downto 0));
 end function_gen_top;
 
 architecture Behavioral of function_gen_top is
 
     component debounce is
         Port (
-            clk : in STD_LOGIC;
-            rst : in STD_LOGIC;
-            btn_in : in STD_LOGIC;
-            btn_state : out STD_LOGIC;
-            btn_press : out STD_LOGIC
+            clk : in std_logic;
+            rst : in std_logic;
+            btn_in : in std_logic;
+            btn_state : out std_logic;
+            btn_press : out std_logic
         );
     end component debounce;
     
@@ -31,61 +31,81 @@ architecture Behavioral of function_gen_top is
             G_BITS : positive := 2
         );
         Port (
-            clk : in STD_LOGIC;
-            up : in STD_LOGIC;
-            down : in STD_LOGIC;
-            rst : in STD_LOGIC;
-            en : in STD_LOGIC;
-            cnt : out STD_LOGIC_VECTOR(G_BITS - 1 downto 0)            
+            clk : in std_logic;
+            up : in std_logic;
+            down : in std_logic;
+            rst : in std_logic;
+            en : in std_logic;
+            cnt : out std_logic_vector(G_BITS - 1 downto 0)            
         );
     end component bidir_counter;
 
     component sig_name_encoder is
         Port (
-            cnt_sig : in STD_LOGIC_VECTOR(1 downto 0);
-            cnt_per : in STD_LOGIC_VECTOR(1 downto 0);
-            data : out STD_LOGIC_VECTOR(55 downto 0)
+            cnt_sig : in std_logic_vector(1 downto 0);
+            cnt_per : in std_logic_vector(1 downto 0);
+            data : out std_logic_vector(55 downto 0)
         );
     end component sig_name_encoder;
     
     component display_driver_direct_data is
         Port (
-            clk : in STD_LOGIC;
-            rst : in STD_LOGIC;
-            data : in STD_LOGIC_VECTOR(55 downto 0);
-            seg : out STD_LOGIC_VECTOR(6 downto 0);
-            anode : out STD_LOGIC_VECTOR(7 downto 0)
+            clk : in std_logic;
+            rst : in std_logic;
+            data : in std_logic_vector(55 downto 0);
+            seg : out std_logic_vector(6 downto 0);
+            anode : out std_logic_vector(7 downto 0)
         );
     end component display_driver_direct_data;
     
     component clk_en is 
        Generic( G_MAX : positive := 5);
        Port(
-           clk:in STD_LOGIC;
-           rst:in STD_LOGIC;
-           ce :out STD_LOGIC
+           clk : in std_logic;
+           rst : in std_logic;
+           ce : out std_logic
        );
-       
     end component clk_en;
     
+    component mux is
+        Generic(G_LENGTH : positive := 1); -- length of muxed signal
+        Port (
+            a : in std_logic_vector(G_LENGTH - 1 downto 0);
+            b : in std_logic_vector(G_LENGTH - 1 downto 0);
+            c : in std_logic_vector(G_LENGTH - 1 downto 0);
+            d : in std_logic_vector(G_LENGTH - 1 downto 0);
+            sel : in std_logic_vector(1 downto 0);
+            output : out std_logic_vector(G_LENGTH - 1 downto 0)
+        );
+    end component mux;
+
     ---------- buttons ----------
-    signal sig_btnu : STD_LOGIC;
-    signal sig_btnd : STD_LOGIC;
-    signal sig_btnr : STD_LOGIC;
-    signal sig_btnl : STD_LOGIC;
+    signal sig_btnu : std_logic;
+    signal sig_btnd : std_logic;
+    signal sig_btnr : std_logic;
+    signal sig_btnl : std_logic;
 
     ---------- counters ----------
-    signal sig_sig_select : STD_LOGIC_VECTOR(1 downto 0);
-    signal sig_per_select : STD_LOGIC_VECTOR(1 downto 0);
+    signal sig_sig_select : std_logic_vector(1 downto 0);
+    signal sig_per_select : std_logic_vector(1 downto 0);
 
     ---------- display ----------
-    signal sig_sig_name : STD_LOGIC_VECTOR(55 downto 0);
+    signal sig_sig_name : std_logic_vector(55 downto 0);
 
     ---------- clock enable ----------
-    signal sig_en_1 : STD_LOGIC;
-    signal sig_en_2 : STD_LOGIC;
-    signal sig_en_3 : STD_LOGIC;
-    signal sig_en_4 : STD_LOGIC;
+    signal sig_en_1 : std_logic;
+    signal sig_en_2 : std_logic;
+    signal sig_en_3 : std_logic;
+    signal sig_en_4 : std_logic;
+
+    ---------- multuplexors ----------
+    signal sig_en : std_logic;
+
+    ---------- generators ----------
+    signal sig_saw : std_logic_vector(7 downto 0);
+    signal sig_sqr : std_logic_vector(7 downto 0);
+    signal sig_tri : std_logic_vector(7 downto 0);
+    signal sig_sin : std_logic_vector(7 downto 0);
 
 begin
 
@@ -201,6 +221,35 @@ begin
             rst => btnc,
             ce  => sig_en_4
          );
+
+---------- multiplexors ----------
+    en_select : mux
+     generic map(
+        G_LENGTH => 1
+    )
+     port map(
+        a(0) => sig_en_1,
+        b(0) => sig_en_2,
+        c(0) => sig_en_3,
+        d(0) => sig_en_4,
+        sel => sig_per_select,
+        output(0) => sig_en
+    );
+
+    sig_select: mux
+     generic map(
+        G_LENGTH => 8
+    )
+     port map(
+        a => sig_saw,
+        b => sig_sqr,
+        c => sig_tri,
+        d => sig_sin,
+        sel => sig_sig_select,
+        output => ja
+    );
+
+---------- generators ----------
 
     dp <= '1';
 end Behavioral;
