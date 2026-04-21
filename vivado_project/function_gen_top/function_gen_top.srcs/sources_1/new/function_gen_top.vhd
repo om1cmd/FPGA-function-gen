@@ -79,6 +79,15 @@ architecture Behavioral of function_gen_top is
         );
     end component mux;
 
+    component gen_sqr is
+        Port (
+            clk : in std_logic;
+            rst : in std_logic;
+            en : in std_logic;
+            dac_out : out std_logic_vector(7 downto 0)
+        );
+    end component gen_sqr;
+
     ---------- buttons ----------
     signal sig_btnu : std_logic;
     signal sig_btnd : std_logic;
@@ -224,9 +233,7 @@ begin
 
 ---------- multiplexors ----------
     en_select : mux
-     generic map(
-        G_LENGTH => 1
-    )
+     generic map(G_LENGTH => 1)
      port map(
         a(0) => sig_en_1,
         b(0) => sig_en_2,
@@ -237,9 +244,7 @@ begin
     );
 
     sig_select: mux
-     generic map(
-        G_LENGTH => 8
-    )
+     generic map(G_LENGTH => 8)
      port map(
         a => sig_saw,
         b => sig_sqr,
@@ -250,6 +255,13 @@ begin
     );
 
 ---------- generators ----------
+    gen_sqr_inst: gen_sqr
+     port map(
+        clk => clk,
+        rst => btnc,
+        en => sig_en,
+        dac_out => sig_sqr
+    );
 
     dp <= '1';
 end Behavioral;
