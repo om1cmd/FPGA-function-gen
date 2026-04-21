@@ -88,6 +88,18 @@ architecture Behavioral of function_gen_top is
         );
     end component gen_sqr;
 
+    component counter is
+        Generic (
+            G_BITS : positive := 8
+        );
+        Port (
+            clk : in  std_logic;
+            rst : in  std_logic;
+            en  : in  std_logic;
+            cnt : out std_logic_vector(G_BITS - 1 downto 0)
+        );
+    end component counter;
+
     ---------- buttons ----------
     signal sig_btnu : std_logic;
     signal sig_btnd : std_logic;
@@ -261,6 +273,15 @@ begin
         rst => btnc,
         en => sig_en,
         dac_out => sig_sqr
+    );
+
+    gen_saw: counter
+     generic map(G_BITS => 8)
+     port map(
+        clk => clk,
+        rst => btnc,
+        en => sig_en,
+        cnt => sig_saw
     );
 
     dp <= '1';
