@@ -25,7 +25,7 @@ architecture Behavioral of function_gen_top is
             btn_press : out std_logic
         );
     end component debounce;
-    
+
     component bidir_counter is
         Generic (
             G_BITS : positive := 2
@@ -36,7 +36,7 @@ architecture Behavioral of function_gen_top is
             down : in std_logic;
             rst : in std_logic;
             en : in std_logic;
-            cnt : out std_logic_vector(G_BITS - 1 downto 0)            
+            cnt : out std_logic_vector(G_BITS - 1 downto 0)
         );
     end component bidir_counter;
 
@@ -47,7 +47,7 @@ architecture Behavioral of function_gen_top is
             data : out std_logic_vector(55 downto 0)
         );
     end component sig_name_encoder;
-    
+
     component display_driver_direct_data is
         Port (
             clk : in std_logic;
@@ -57,8 +57,8 @@ architecture Behavioral of function_gen_top is
             anode : out std_logic_vector(7 downto 0)
         );
     end component display_driver_direct_data;
-    
-    component clk_en is 
+
+    component clk_en is
        Generic( G_MAX : positive := 5);
        Port(
            clk : in std_logic;
@@ -66,7 +66,7 @@ architecture Behavioral of function_gen_top is
            ce : out std_logic
        );
     end component clk_en;
-    
+
     component mux is
         Generic(G_LENGTH : positive := 1); -- length of muxed signal
         Port (
@@ -126,7 +126,7 @@ begin
             btn_in => btnd,
             btn_press => sig_btnd,
             btn_state => open
-        );    
+        );
 
     debounce_r : debounce
         port map (
@@ -178,7 +178,7 @@ begin
             cnt_per => sig_per_select,
             data => sig_sig_name
         );
-    
+
     display_driver_direct_data_inst : display_driver_direct_data
         port map (
             clk => clk,
@@ -197,7 +197,7 @@ begin
             rst => btnc,
             ce  => sig_en_1
          );
-         
+
      clk_en_2 : clk_en
          generic map(G_MAX => 10_000)
          port map(
@@ -205,7 +205,7 @@ begin
             rst => btnc,
             ce  => sig_en_2
          );
-         
+
       clk_en_3 : clk_en
          generic map(G_MAX => 1000)
          port map(
@@ -213,7 +213,7 @@ begin
             rst => btnc,
             ce  => sig_en_3
          );
-         
+
       clk_en_4 : clk_en
          generic map(G_MAX => 100)
          port map(
