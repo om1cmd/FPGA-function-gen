@@ -27,13 +27,13 @@ begin
                sqr_state <= '0';
 
             elsif en = '1' then
-                if sqr_state = '1' then
-                    dac_out <= (others => '0');
+                if sqr_state = '0' then
                     sqr_state <= '1';
-
-                elsif sqr_state = '0' then
                     dac_out <= (others => '1');
+
+                elsif sqr_state = '1' then
                     sqr_state <= '0';
+                    dac_out <= (others => '0');
 
                 end if;
             end if;
