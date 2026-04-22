@@ -2,16 +2,18 @@ library IEEE;
 use IEEE.std_logic_1164.ALL;
 
 entity function_gen_top is
-    Port ( clk : in std_logic;
-           btnu : in std_logic;
-           btnd : in std_logic;
-           btnl : in std_logic;
-           btnr : in std_logic;
-           btnc : in std_logic;
-           dp : out std_logic;
-           seg : out std_logic_vector (6 downto 0);
-           an : out std_logic_vector (7 downto 0);
-           ja : out std_logic_vector (7 downto 0));
+    Port (
+        clk : in std_logic;
+        btnu : in std_logic;
+        btnd : in std_logic;
+        btnl : in std_logic;
+        btnr : in std_logic;
+        btnc : in std_logic;
+        dp : out std_logic;
+        seg : out std_logic_vector (6 downto 0);
+        an : out std_logic_vector (7 downto 0);
+        ja : out std_logic_vector (7 downto 0)
+    );
 end function_gen_top;
 
 architecture Behavioral of function_gen_top is

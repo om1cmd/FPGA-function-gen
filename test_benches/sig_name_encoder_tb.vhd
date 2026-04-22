@@ -33,9 +33,9 @@ begin
 
         cnt_sig <= "01";
         cnt_per <= "01";
-        
+
         wait for 100 ns;
-        
+
         cnt_sig <= "10";
         cnt_per <= "10";
 
