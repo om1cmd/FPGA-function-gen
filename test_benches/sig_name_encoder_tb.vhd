@@ -42,7 +42,9 @@ begin
         wait for 100 ns;
 
         cnt_sig <= "11";
-        cnt_sig <= "11";
+        cnt_per <= "11";
+
+        wait for 100 ns;
 
         wait;
     end process;
