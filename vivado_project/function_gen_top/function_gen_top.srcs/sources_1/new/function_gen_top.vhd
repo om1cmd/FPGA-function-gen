@@ -102,6 +102,31 @@ architecture Behavioral of function_gen_top is
         );
     end component counter;
 
+    component gen_sin is
+        generic(
+            NUM_POINTS : integer := 32;
+            MAX_AMPLITUDE : integer := 255
+        );
+        port (
+            clk     : in  std_logic;
+            rst     : in  std_logic;
+            en      : in  std_logic;
+            dac_out : out std_logic_vector(7 downto 0)
+        );
+    end component gen_sin;
+
+    component gen_tri is
+        generic (
+        G_BITS : positive := 8  --! Default number of bits
+    );
+    port (
+        clk : in std_logic;
+        rst : in  std_logic;
+        en  : in  std_logic;
+        dac_out : out std_logic_vector(G_BITS - 1 downto 0)
+    );
+    end component gen_tri;
+
     ---------- buttons ----------
     signal sig_btnu : std_logic;
     signal sig_btnd : std_logic;
@@ -284,6 +309,29 @@ begin
         rst => btnc,
         en => sig_en,
         cnt => sig_saw
+    );
+
+    gen_sin_inst: gen_sin
+     generic map(
+        NUM_POINTS => 32,
+        MAX_AMPLITUDE => 255
+    )
+     port map(
+        clk => clk,
+        rst => btnc,
+        en => sig_en,
+        dac_out => sig_sin
+    );
+
+    gen_tri_inst: gen_tri
+     generic map(
+        G_BITS => 8
+    )
+     port map(
+        clk => clk,
+        rst => btnc,
+        en => sig_en,
+        dac_out => sig_tri
     );
 
     dp <= '1';
