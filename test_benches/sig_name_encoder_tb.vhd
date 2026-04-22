@@ -9,12 +9,12 @@ architecture tb of tb_sig_name_encoder is
     component sig_name_encoder
         port (cnt_sig : in std_logic_vector (1 downto 0);
               cnt_per : in std_logic_vector (1 downto 0);
-              data    : out std_logic_vector (27 downto 0));
+              data    : out std_logic_vector (55 downto 0));
     end component;
 
     signal cnt_sig : std_logic_vector (1 downto 0);
     signal cnt_per : std_logic_vector (1 downto 0);
-    signal data    : std_logic_vector (27 downto 0);
+    signal data    : std_logic_vector (55 downto 0);
 
 begin
 
