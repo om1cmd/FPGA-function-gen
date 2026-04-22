@@ -51,14 +51,9 @@ begin
         rst <= '0';
         wait for 100 ns;
 
-        -- ***EDIT*** Add stimuli here
-        wait for 100 * TbPeriod;
-
         data <= b"0011100_0111110_1000001_1110000_0001111_1010101_1111111_0000000";
 
         wait for 1000 ns;
-
-        data <= b"1110000_1111010_1100010_1000011_1001111_1111111_0110000_0000110";
 
         -- Stop the clock and hence terminate the simulation
         TbSimEnded <= '1';
