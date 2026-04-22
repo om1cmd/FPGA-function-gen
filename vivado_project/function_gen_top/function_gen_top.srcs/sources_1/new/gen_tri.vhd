@@ -6,7 +6,7 @@ use ieee.numeric_std.all;
 
 entity gen_tri is
     generic (
-        G_BITS : positive := 3  --! Default number of bits
+        G_BITS : positive := 8  --! Default number of bits
     );
     port (
         clk : in std_logic;
@@ -20,7 +20,7 @@ end entity gen_tri;
 
 architecture triangle of gen_tri is
     signal sig_cnt  : unsigned(G_BITS - 1 downto 0) := (others => '0');
-    signal up_down  : std_logic := '1'; 
+    signal up_down  : std_logic := '1';
 begin
 
     p_triangle : process (clk) is
@@ -29,22 +29,22 @@ begin
             if rst = '1' then
                 sig_cnt <= (others => '0');
                 up_down <= '1';
+
             elsif en = '1' then
-                
-                -- 1. Logika čítání
+                -- 1. counting logic
                 if up_down = '1' then
                     sig_cnt <= sig_cnt + 1;
                 else
                     sig_cnt <= sig_cnt - 1;
                 end if;
 
-                -- 2. Logika otočení směru 
+                -- 2. direction change
                 if up_down = '1' and sig_cnt = (2**G_BITS - 2) then
                     up_down <= '0';
                 elsif up_down = '0' and sig_cnt = 1 then
                     up_down <= '1';
                 end if;
-                
+
             end if;
         end if;
     end process p_triangle;

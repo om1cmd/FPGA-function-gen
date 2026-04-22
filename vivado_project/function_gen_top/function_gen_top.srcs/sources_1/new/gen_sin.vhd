@@ -11,7 +11,7 @@ entity gen_sin is
         clk     : in  std_logic;
         rst     : in  std_logic;
         en      : in  std_logic;
-        dac_out : out std_logic_vector(7 downto 0) 
+        dac_out : out std_logic_vector(7 downto 0)
     );
 end gen_sin;
 
@@ -20,7 +20,7 @@ architecture Behavioral of gen_sin is
     signal i : integer range 0 to NUM_POINTS - 1 := 0;
 
     type memory_type is array (0 to NUM_POINTS-1) of integer range 0 to MAX_AMPLITUDE;
-    
+
     signal sine : memory_type := (
         128, 152, 176, 198, 218, 234, 245, 253,
         255, 253, 245, 234, 218, 198, 176, 152,
