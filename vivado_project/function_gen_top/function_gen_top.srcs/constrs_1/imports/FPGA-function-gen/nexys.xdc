@@ -48,11 +48,11 @@ set_property IOSTANDARD LVCMOS33 [get_ports {an[*]}]
 # -----------------------------------------------
 # Pmod Header JA
 # -----------------------------------------------
-set_property -dict { PACKAGE_PIN C17 IOSTANDARD LVCMOS33 } [get_ports {ja[0]}];
-set_property -dict { PACKAGE_PIN D18 IOSTANDARD LVCMOS33 } [get_ports {ja[1]}];
-set_property -dict { PACKAGE_PIN E18 IOSTANDARD LVCMOS33 } [get_ports {ja[2]}];
-set_property -dict { PACKAGE_PIN G17 IOSTANDARD LVCMOS33 } [get_ports {ja[3]}];
-set_property -dict { PACKAGE_PIN D17 IOSTANDARD LVCMOS33 } [get_ports {ja[4]}];
-set_property -dict { PACKAGE_PIN E17 IOSTANDARD LVCMOS33 } [get_ports {ja[5]}];
-set_property -dict { PACKAGE_PIN F18 IOSTANDARD LVCMOS33 } [get_ports {ja[6]}];
-set_property -dict { PACKAGE_PIN G18 IOSTANDARD LVCMOS33 } [get_ports {ja[7]}];
+set_property -dict { PACKAGE_PIN C17 IOSTANDARD LVCMOS33 } [get_ports {ja[7]}];
+set_property -dict { PACKAGE_PIN D18 IOSTANDARD LVCMOS33 } [get_ports {ja[6]}];
+set_property -dict { PACKAGE_PIN E18 IOSTANDARD LVCMOS33 } [get_ports {ja[5]}];
+set_property -dict { PACKAGE_PIN G17 IOSTANDARD LVCMOS33 } [get_ports {ja[4]}];
+set_property -dict { PACKAGE_PIN D17 IOSTANDARD LVCMOS33 } [get_ports {ja[3]}];
+set_property -dict { PACKAGE_PIN E17 IOSTANDARD LVCMOS33 } [get_ports {ja[2]}];
+set_property -dict { PACKAGE_PIN F18 IOSTANDARD LVCMOS33 } [get_ports {ja[1]}];
+set_property -dict { PACKAGE_PIN G18 IOSTANDARD LVCMOS33 } [get_ports {ja[0]}];

@@ -239,7 +239,7 @@ begin
 ---------- clock enable ----------
 
      clk_en_1 : clk_en
-         generic map(G_MAX => 100_000)
+         generic map(G_MAX => 195)
          port map(
             clk => clk,
             rst => btnc,
@@ -247,7 +247,7 @@ begin
          );
 
      clk_en_2 : clk_en
-         generic map(G_MAX => 10_000)
+         generic map(G_MAX => 19)
          port map(
             clk => clk,
             rst => btnc,
@@ -255,7 +255,7 @@ begin
          );
 
       clk_en_3 : clk_en
-         generic map(G_MAX => 1000)
+         generic map(G_MAX => 2)
          port map(
             clk => clk,
             rst => btnc,
@@ -263,7 +263,7 @@ begin
          );
 
       clk_en_4 : clk_en
-         generic map(G_MAX => 100)
+         generic map(G_MAX => 1)
          port map(
             clk => clk,
             rst => btnc,

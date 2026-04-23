@@ -41,7 +41,6 @@ architecture Behavioral of display_driver_direct_data is
     -- Internal signals
     signal sig_en    : std_logic;
     signal sig_digit : std_logic_vector(2 downto 0);
-    signal sig_seg   : std_logic_vector(6 downto 0);
 
 begin
 
@@ -49,7 +48,7 @@ begin
     -- Clock enable generator for refresh timing
     ------------------------------------------------------------------------
     clock_en_0 : clk_en
-        generic map ( G_MAX => 800_000 )  -- Adjust for flicker-free multiplexing
+        generic map ( G_MAX => 10_000 )  -- Adjust for flicker-free multiplexing
         port map (                        -- For simulation: 8
             clk => clk,                   -- For implementation: 800_000
             rst => rst,
@@ -71,14 +70,14 @@ begin
     ------------------------------------------------------------------------
     -- Digit select
     ------------------------------------------------------------------------
-    sig_seg <=  data(6 downto 0)   when sig_digit = "000" else
-                data(13 downto 7)  when sig_digit = "001" else
-                data(20 downto 14) when sig_digit = "010" else
-                data(27 downto 21) when sig_digit = "011" else
-                data(34 downto 28) when sig_digit = "100" else
-                data(41 downto 35) when sig_digit = "101" else
-                data(48 downto 42) when sig_digit = "110" else
-                data(55 downto 49);
+    seg <=  data(6 downto 0)   when sig_digit = "000" else
+            data(13 downto 7)  when sig_digit = "001" else
+            data(20 downto 14) when sig_digit = "010" else
+            data(27 downto 21) when sig_digit = "011" else
+            data(34 downto 28) when sig_digit = "100" else
+            data(41 downto 35) when sig_digit = "101" else
+            data(48 downto 42) when sig_digit = "110" else
+            data(55 downto 49);
 
     ------------------------------------------------------------------------
     -- Anode select process
@@ -103,7 +102,7 @@ begin
             when "111" =>
                 anode <= "01111111";
             when others =>
-                anode <= "11111111";  -- All off
+                anode <= "10111111";  -- All off
         end case;
     end process;
 
