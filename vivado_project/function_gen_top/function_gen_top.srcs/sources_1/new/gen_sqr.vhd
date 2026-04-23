@@ -16,26 +16,30 @@ end entity gen_sqr;
 
 architecture Behavioral of gen_sqr is
 
-    component clk_en is
-       Generic( G_MAX : positive := 5);
-       Port(
-           clk : in std_logic;
-           rst : in std_logic;
-           ce : out std_logic
-       );
-    end component clk_en;
+component counter is
+    Generic (
+        G_BITS : positive := 8
+    );
+    Port (
+        clk : in  std_logic;
+        rst : in  std_logic;
+        en  : in  std_logic;
+        cnt : out std_logic_vector(G_BITS - 1 downto 0)
+    );
+end component counter;
 
 signal sqr_state : std_logic;
 signal sig_cnt : std_logic_vector(7 downto 0);
 signal sig_en : std_logic;
 
 begin
-     clk_en_1 : clk_en
-         generic map(G_MAX => 256)
-         port map(
-            clk => en,
+    delay: counter
+        generic map(G_BITS => 8)
+        port map(
+            clk => clk,
             rst => rst,
-            ce  => sig_en
+            en => en,
+            cnt => sig_cnt
         );
 
     process (clk) is
@@ -44,8 +48,8 @@ begin
             if rst = '1' then
                dac_out <= (others => '0');
                sqr_state <= '0';
-        
-            elsif sig_en = '1' then
+
+            elsif sig_cnt = b"11111111" then
                 if sqr_state = '0' then
                     sqr_state <= '1';
                     dac_out <= (others => '1');
