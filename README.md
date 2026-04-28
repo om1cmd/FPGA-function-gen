@@ -75,4 +75,13 @@ This block generates a 56 bit long vector with data for 7 segment displays. Each
 ### 4. display_driver_direct_data
 This is a display driver block that works on a similar principle as display_driver writen on computer excercises. It was modified to take a 56 bit long input vector where each bit coresponds to 1 segment of all 8 seven segment displays. This allows us light up arbitrary segments, which is useful, because we need to display a lot of different letters that are not available in the original display_driver.
 
-####
+#### Inputs
+- **clk**: 100 MHz clock
+- **rst**: Active high reset
+- **data**: 56 bit long input vector
+
+#### Outputs
+- **seg**: 7 bit long vector with data for individual 7 segment displays
+- **anode**: 8 bit long vector with only one bit low at a time, selecting 1 seven segment display at a time
+
+![display_driver_direct_data_sim](images/simulations/display_driver_direct_data.png)
