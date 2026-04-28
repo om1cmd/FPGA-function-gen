@@ -29,19 +29,8 @@ component counter is
 end component counter;
 
 signal sqr_state : std_logic;
-signal sig_cnt : std_logic_vector(7 downto 0);
-signal sig_en : std_logic;
 
 begin
-    delay: counter
-        generic map(G_BITS => 8)
-        port map(
-            clk => clk,
-            rst => rst,
-            en => en,
-            cnt => sig_cnt
-        );
-
     process (clk) is
     begin
         if rising_edge(clk) then
@@ -49,7 +38,7 @@ begin
                dac_out <= (others => '0');
                sqr_state <= '0';
 
-            elsif sig_cnt = b"11111111" then
+            elsif en = '1' then
                 if sqr_state = '0' then
                     sqr_state <= '1';
                     dac_out <= (others => '1');
