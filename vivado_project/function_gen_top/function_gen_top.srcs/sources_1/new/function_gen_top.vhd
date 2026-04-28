@@ -127,6 +127,14 @@ architecture Behavioral of function_gen_top is
     );
     end component gen_tri;
 
+    component ampl_ch is
+        Port (
+            sw : in STD_LOGIC_VECTOR(1 downto 0);
+            data_in : in STD_LOGIC_VECTOR (7 downto 0);
+            data_out : out STD_LOGIC_VECTOR (7 downto 0)
+        );
+    end component ampl_ch;
+
     ---------- buttons ----------
     signal sig_btnu : std_logic;
     signal sig_btnd : std_logic;
