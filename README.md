@@ -85,3 +85,56 @@ This is a display driver block that works on a similar principle as display_driv
 - **anode**: 8 bit long vector with only one bit low at a time, selecting 1 seven segment display at a time
 
 ![display_driver_direct_data_sim](images/simulations/display_driver_direct_data.png)
+
+### 5. gen_sqr
+This block generates a square wave. It alternates between 2 states, all zeros and all ones.
+
+#### Inputs
+- **clk**: 100 MHz clock
+- **rst**: Active high reset
+- **en**: Active high enable
+
+#### Outputs
+- **dac_out**: 8 bit long output vector for DA subsequent conversion
+
+![gen_sqr_sim](images/simulations/gen_sqr.png)
+Simulation does not show an analog waveform, because vivado would just connect individual points, making it look like a triangular waveform instead of a square one.
+
+### 6. gen_tri
+This block generates a triangular wave. It has an internal bidirectional 8 bit counter that starts counting up and once it reaches 255 direction flips and it starts counting down. At 0 it flips again.
+
+#### Inputs
+- **clk**: 100 MHz clock
+- **rst**: Active high reset
+- **en**: Active high enable
+
+#### Outputs
+- **dac_out**: 8 bit long output vector for DA subsequent conversion
+
+![gen_tri_sim](images/simulations/gen_tri.png)
+
+### 7. gen_saw
+This is not a new block, but we wanted to have all waveforms simulated. Gen_saw is a simple up counter.
+
+#### Inputs
+- **clk**: 100 MHz clock
+- **rst**: Active high reset
+- **en**: Active high enable
+
+#### Outputs
+- **dac_out**: 8 bit long output vector for DA subsequent conversion
+
+![gen_saw_sim](images/simulations/gen_saw.png)
+
+### 8. gen_sin
+This block generates a sinusoidal wave. This is the only code that was not written by us, because we didn't really know how to approach this. So instead we found this code (waiting for a link) and modified it slightly to work with out setup.
+
+#### Inputs
+- **clk**: 100 MHz clock
+- **rst**: Active high reset
+- **en**: Active high enable
+
+#### Outputs
+- **dac_out**: 8 bit long output vector for DA subsequent conversion
+
+![gen_sin_sim](images/simulations/gen_sin.png)

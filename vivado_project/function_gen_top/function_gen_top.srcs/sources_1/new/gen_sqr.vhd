@@ -16,18 +16,6 @@ end entity gen_sqr;
 
 architecture Behavioral of gen_sqr is
 
-component counter is
-    Generic (
-        G_BITS : positive := 8
-    );
-    Port (
-        clk : in  std_logic;
-        rst : in  std_logic;
-        en  : in  std_logic;
-        cnt : out std_logic_vector(G_BITS - 1 downto 0)
-    );
-end component counter;
-
 signal sqr_state : std_logic;
 
 begin
