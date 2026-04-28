@@ -19,6 +19,12 @@ set_property -dict { PACKAGE_PIN M17 IOSTANDARD LVCMOS33 } [get_ports {btnr}];
 set_property -dict { PACKAGE_PIN P18 IOSTANDARD LVCMOS33 } [get_ports {btnd}];
 
 # -----------------------------------------------
+# Switches
+# -----------------------------------------------
+set_property -dict { PACKAGE_PIN J15 IOSTANDARD LVCMOS33 } [get_ports {sw[0]}];
+set_property -dict { PACKAGE_PIN L16 IOSTANDARD LVCMOS33 } [get_ports {sw[1]}];
+
+# -----------------------------------------------
 # Seven-segment cathodes CA..CG + DP (active-low)
 # seg[6]=A ... seg[0]=G
 # -----------------------------------------------
