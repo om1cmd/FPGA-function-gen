@@ -9,6 +9,7 @@ entity function_gen_top is
         btnl : in std_logic;
         btnr : in std_logic;
         btnc : in std_logic;
+        sw : in std_logic_vector(1 downto 0);
         dp : out std_logic;
         seg : out std_logic_vector (6 downto 0);
         an : out std_logic_vector (7 downto 0);
@@ -156,6 +157,7 @@ architecture Behavioral of function_gen_top is
 
     ---------- multuplexors ----------
     signal sig_en : std_logic;
+    signal sig_data : std_logic_vector(7 downto 0);
 
     ---------- generators ----------
     signal sig_saw : std_logic_vector(7 downto 0);
@@ -298,7 +300,7 @@ begin
         c => sig_tri,
         d => sig_sin,
         sel => sig_sig_select,
-        output => ja
+        output => sig_data
     );
 
 ---------- generators ----------
@@ -340,6 +342,13 @@ begin
         rst => btnc,
         en => sig_en,
         dac_out => sig_tri
+    );
+
+    ampl_ch_inst: ampl_ch
+     port map(
+        sw => sw,
+        data_in => sig_data,
+        data_out => ja
     );
 
     dp <= '1';
