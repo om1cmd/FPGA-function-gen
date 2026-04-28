@@ -1,11 +1,11 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+library ieee;
+use ieee.std_logic_1164.ALL;
 use ieee.numeric_std.all;
 
 entity ampl_ch is
-    Port (sw : in STD_LOGIC_VECTOR(1 downto 0);
-          data_in : in STD_LOGIC_VECTOR (7 downto 0);
-          data_out : out STD_LOGIC_VECTOR (7 downto 0));
+    Port (sw : in std_logic_vector(1 downto 0);
+          data_in : in std_logic_vector (7 downto 0);
+          data_out : out std_logic_vector (7 downto 0));
 end ampl_ch;
 
 architecture Behavioral of ampl_ch is

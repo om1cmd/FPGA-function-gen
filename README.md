@@ -138,3 +138,16 @@ This block generates a sinusoidal wave. This is the only code that was not writt
 - **dac_out**: 8 bit long output vector for DA subsequent conversion
 
 ![gen_sin_sim](images/simulations/gen_sin.png)
+
+### 9. ampl_ch
+This block allows for changing output amplitude. It simply divides the 8 bit output signal by bitshifting it to the right by 1, 2 or 3 bits based on a current value comming from switches on the board.
+
+#### Inputs
+- **sw**: 2 bit vector, current value on switches
+- **data_in**: 8 bit vector, input data to be devided
+
+#### Outputs
+- **data_out**: 8 bit vector, devided data
+
+![ampl_ch](images/simulations/ampl_ch.png)
+It is not immediately obvious, since vivado shows both waveforms as having the same amplitude, but the top waveform is devided by 2. This can be verified by looking at current value at the cursor.
