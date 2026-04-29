@@ -1,4 +1,5 @@
 # FPGA function generator
+This is a project for BPC-DE1 digital electronics course on BUT FEEC.
 ### Our function generator has following functions:
 1. #### Ability to generate 4 different waveforms
     - sawtooth
@@ -11,13 +12,18 @@
 3. #### Ability to select 4 different output amplitudes
     - Output amplitude is limited to 3.3 V and final amplitude control block can devide it by 2, 4 or 8 times, giving us 4 different amplitudes (3.3 V, 1.65 V, 0.83 V, 0.41 V).
 
-3. #### Push buttons on Nexys A7 50T board are used to control the generator:
+3. #### Controls:
     - Center button is wired to reset
     - Left and right buttons change between available frequencies
-    - Up and down buttons change between available signals
+    - Up and down buttons change between available waveforms
     - First 2 switches control output amplitude
 
 The output is routed to Pmod headers and converted to analog voltages using external R-2R ladder DAC.
+
+## Use of AI
+LLMs were used during work on this project mainly to help us troubleshoot issues. AI was not used to generate complete blocks, but rather as a tool to discover new possibilities of implementation. All of the generated code was reviewed by us and we only used it, if we understood it.
+
+Only exception to this is a sinusoidal waveform generator who's code was taken from the internet and modified with a help from AI to fit into our project. More information can be found in the individual block description below.
 
 ## Block diagram
 ![Block diagram](images/block_diagram.png)
@@ -67,7 +73,7 @@ Bidirectional counter is a synchronous counter with configurable length.
 - **en**: Enable
 
 #### **Outputs**
-- **cnt**: Counter value
+- **cnt**: Current ounter value
 
 #### **Simulation**
 ![bidir_counter_sim](images/simulations/bidir_counter.png)
@@ -154,7 +160,7 @@ This is not a new block, but we wanted to have all waveforms simulated. Gen_saw 
 - **en**: Active high enable
 
 #### **Outputs**
-- **dac_out**: 8 bit long output vector for DA subsequent conversion
+- **dac_out**: 8 bit long output vector for subsequent  DA conversion
 
 ![gen_saw_sim](images/simulations/gen_saw.png)
 
