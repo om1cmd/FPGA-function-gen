@@ -1,22 +1,18 @@
 # FPGA function generator
 This is a project for BPC-DE1 digital electronics course on BUT FEEC.
-### Our function generator has following functions:
+### Brief project summary
+This project is a function generator implemented on an Nexys A7 50T FPGA development board. It has following functinos:
 1. #### Ability to generate 4 different waveforms
-    - sawtooth
-    - triangle
-    - square
-    - sin
+    - Square
+    - Sawtooth
+    - Triangular
+    - Sinusoidal
 
 2. #### Ability to generate signals of 4 different frequencies.
+    - See *Problems* in the full description for more information.
 
 3. #### Ability to select 4 different output amplitudes
-    - Output amplitude is limited to 3.3 V and final amplitude control block can devide it by 2, 4 or 8 times, giving us 4 different amplitudes (3.3 V, 1.65 V, 0.83 V, 0.41 V).
-
-3. #### Controls:
-    - Center button is wired to reset
-    - Left and right buttons change between available frequencies
-    - Up and down buttons change between available waveforms
-    - First 2 switches control output amplitude
+    - Output amplitude is limited to 3.3 V and final amplitude control block can devide it by 2, 4 or 8 times, giving us 4 different amplitudes.
 
 The output is routed to Pmod headers and converted to analog voltages using external R-2R ladder DAC.
 
@@ -51,7 +47,7 @@ Left and right buttons are connected to a *counter_per_select* which is again a 
 
 Current state of those counters is fed into *sig_name_encoder* which then outputs 56 bit long vector of data for *display_driver_direct_data* which displays it on all 8 available 7 segment displays, showing currently selected waveform type and signal frequency.
 
-Four *clock_enable* blocks are used to generate 4 different frequencies and a multiplexer is used to select between them. This enable signal (sig_en) is then fed into all four signal generator blocks. Then another multiplexor selects an output signal that is passed into *ampl_ch* block that can divide the data by 2, 4, 8 or just pass straight through unchanged signal. This way we can select 4 different output amplitudes.
+Four *clock_enable* blocks are used to generate 4 different frequencies and a multiplexer is used to select between them. This enable signal (sig_en) is then fed into all four signal generator blocks. Then another multiplexor selects an output signal that is passed into *ampl_ch* block that can divide the data by 2, 4, 8 or just pass straight through unchanged signal. This way we can select 4 different output amplitudes. In analog voltages those are 3.3 V, 1.65 V, 0.83 V, 0.41 V.
 
 ### Problems
 This desing by far not perfect. It's biggest problem is that each signal generator block takes a different amount of clock cycles to complete one period. For example a square signal changes state each clock cycle (when enable is high), taking 2 clock cycles to complete a period. But a triangle generator takes 256 cyckles to count up and another 256 cycles to count down, meaning it is 256 times slower than a square generator.
@@ -165,7 +161,7 @@ This is not a new block, but we wanted to have all waveforms simulated. Gen_saw 
 ![gen_saw_sim](images/simulations/gen_saw.png)
 
 ### 8. gen_sin
-This block generates a sinusoidal wave. This is the only code that was not written by us, because we didn't really know how to approach this. So instead we found this code (waiting for a link) and modified it slightly to work with out setup.
+This block generates a sinusoidal wave. This is the only code that was not written by us, because we didn't really know how to approach this. So instead we found [this code](https://surf-vhdl.com/how-to-generate-sine-samples-in-vhdl/) and modified it slightly to work with out setup. AI was used to help with this task.
 
 #### **Inputs**
 - **clk**: 100 MHz clock
