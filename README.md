@@ -1,7 +1,7 @@
 # FPGA function generator
 This is a project for BPC-DE1 digital electronics course on BUT FEEC.
 ### Brief project summary
-This project is a function generator implemented on an Nexys A7 50T FPGA development board. It has following functinos:
+This project is a function generator implemented on an Nexys A7 50T FPGA development board. It has following functions:
 1. #### Ability to generate 4 different waveforms
     - Square
     - Sawtooth
@@ -50,7 +50,7 @@ Current state of those counters is fed into *sig_name_encoder* which then output
 Four *clock_enable* blocks are used to generate 4 different frequencies and a multiplexer is used to select between them. This enable signal (sig_en) is then fed into all four signal generator blocks. Then another multiplexor selects an output signal that is passed into *ampl_ch* block that can divide the data by 2, 4, 8 or just pass straight through unchanged signal. This way we can select 4 different output amplitudes. In analog voltages those are 3.3 V, 1.65 V, 0.83 V, 0.41 V.
 
 ### Problems
-This desing by far not perfect. It's biggest problem is that each signal generator block takes a different amount of clock cycles to complete one period. For example a square signal changes state each clock cycle (when enable is high), taking 2 clock cycles to complete a period. But a triangle generator takes 256 cyckles to count up and another 256 cycles to count down, meaning it is 256 times slower than a square generator.
+This design by far not perfect. It's biggest problem is that each signal generator block takes a different amount of clock cycles to complete one period. For example a square signal changes state each clock cycle (when enable is high), taking 2 clock cycles to complete a period. But a triangle generator takes 256 cyckles to count up and another 256 cycles to count down, meaning it is 256 times slower than a square generator.
 
 We realized that this is a problem only after we started testing with hardware and we couldn't fix this in time. We tried slowing down *gen_sqr* by using an internal 8 bit counter, but for some reason out implementation did not work. Since we didn't have any more time we decided to leave this issue in. Current *clock_enable* values are set so that triangular wave (the slowest one) runs at the correct frequencies of 1 kHz, 10 kHz, 100 kHz and 200 kHz. All other blocks will run on different frequencies and the displayed frequency it therefore invalid for them.
 
