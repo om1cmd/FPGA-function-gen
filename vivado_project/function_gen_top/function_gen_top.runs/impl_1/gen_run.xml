@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a50ticsg324-1L" LaunchTime="1777554214">
+  <File Type="PA-TCL" Name="function_gen_top.tcl"/>
+  <File Type="REPORTS-TCL" Name="function_gen_top_reports.tcl"/>
+  <File Type="INIT-TIMING" Name="function_gen_top_timing_summary_init.rpt"/>
+  <File Type="OPT-DCP" Name="function_gen_top_opt.dcp"/>
+  <File Type="OPT-DRC" Name="function_gen_top_drc_opted.rpt"/>
+  <File Type="OPT-UTIL" Name="function_gen_top_utilization_opted.rpt"/>
+  <File Type="OPT-UTIL-PB" Name="function_gen_top_utilization_opted.pb"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="function_gen_top_methodology_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="function_gen_top.hwdef"/>
+  <File Type="OPT-TIMING" Name="function_gen_top_timing_summary_opted.rpt"/>
+  <File Type="OPT-RQA-PB" Name="function_gen_top_rqa_opted.pb"/>
+  <File Type="PWROPT-DCP" Name="function_gen_top_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="function_gen_top_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="function_gen_top_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="function_gen_top_placed.dcp"/>
+  <File Type="PLACE-IO" Name="function_gen_top_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="function_gen_top_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="function_gen_top_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="function_gen_top_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="function_gen_top_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="function_gen_top_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="function_gen_top_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="function_gen_top_timing_summary_placed.rpt"/>
+  <File Type="PLACE-RQA-PB" Name="function_gen_top_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="function_gen_top_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="function_gen_top_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="function_gen_top_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="function_gen_top_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="function_gen_top_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="function_gen_top_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="function_gen_top_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="function_gen_top_routed_bb.dcp"/>
+  <File Type="ROUTE-UTIL" Name="function_gen_top_utilization_routed.rpt"/>
+  <File Type="ROUTE-UTIL-PB" Name="function_gen_top_utilization_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="function_gen_top_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="function_gen_top_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="function_gen_top_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="function_gen_top_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="function_gen_top_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="function_gen_top_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="function_gen_top_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="function_gen_top_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="function_gen_top_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="function_gen_top_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="function_gen_top_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="function_gen_top_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="function_gen_top_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="function_gen_top_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="function_gen_top_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="function_gen_top_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="function_gen_top_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="function_gen_top_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="function_gen_top_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-RQS-PB" Name="function_gen_top_rqs_routed.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="function_gen_top_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="function_gen_top_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="function_gen_top_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="function_gen_top_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="function_gen_top_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="function_gen_top_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="function_gen_top_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="function_gen_top_bus_skew_postroute_physopted.rpx"/>
+  <File Type="NOC_TRAFFIC_SPEC_FILE" Name="function_gen_top.nts"/>
+  <File Type="NOC_SOLUTION_FILE" Name="function_gen_top.ncr"/>
+  <File Type="BG-BIT" Name="function_gen_top.bit"/>
+  <File Type="BG-BIN" Name="function_gen_top.bin"/>
+  <File Type="BITSTR-MSK" Name="function_gen_top.msk"/>
+  <File Type="BITSTR-RBT" Name="function_gen_top.rbt"/>
+  <File Type="BITSTR-NKY" Name="function_gen_top.nky"/>
+  <File Type="BITSTR-BMM" Name="function_gen_top_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="function_gen_top.mmi"/>
+  <File Type="PDI-FILE" Name="function_gen_top.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="function_gen_top_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="function_gen_top_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="function_gen_top.rcfi"/>
+  <File Type="CFI_FILE" Name="function_gen_top.cfi"/>
+  <File Type="RNPI_FILE" Name="function_gen_top.rnpi"/>
+  <File Type="RCDO-FILE" Name="function_gen_top.rcdo"/>
+  <File Type="MARKER-RNPI-FILE" Name="function_gen_top_markers.rnpi"/>
+  <File Type="MARKER-RCDO-FILE" Name="function_gen_top_markers.rcdo"/>
+  <File Type="BOOT_RNPI_FILE" Name="function_gen_top_boot.rnpi"/>
+  <File Type="BOOT_MARKER_RNPI_FILE" Name="function_gen_top_boot_markers.rnpi"/>
+  <File Type="PL_RNPI_FILE" Name="function_gen_top_pld.rnpi"/>
+  <File Type="PL_MARKER_RNPI_FILE" Name="function_gen_top_pld_markers.rnpi"/>
+  <File Type="PL_MASK_RNPI_FILE" Name="function_gen_top_pld_mask.rnpi"/>
+  <File Type="PL_SHUTDOWN_RNPI_FILE" Name="function_gen_top_pld_shutdown.rnpi"/>
+  <File Type="PL_UNMASK_RNPI_FILE" Name="function_gen_top_pld_unmask.rnpi"/>
+  <File Type="PL-RCDO-FILE" Name="function_gen_top_pld.rcdo"/>
+  <File Type="PL-CLEAR-RCDO-FILE" Name="function_gen_top_pld_clear.rcdo"/>
+  <File Type="PL_MARKER_RCDO_FILE" Name="function_gen_top_pld_markers.rcdo"/>
+  <File Type="PL_MASK_RCDO_FILE" Name="function_gen_top_pld_mask.rcdo"/>
+  <File Type="PL_UNMASK_MARKER_RCDO_FILE" Name="function_gen_top_pld_unmask_markers.rcdo"/>
+  <File Type="PL_UNMASK_RCDO_FILE" Name="function_gen_top_pld_unmask.rcdo"/>
+  <File Type="NPI_FILE" Name="function_gen_top.npi"/>
+  <File Type="RBD_FILE" Name="function_gen_top.rbd"/>
+  <File Type="MMI-FILE" Name="function_gen_top.mmi"/>
+  <File Type="BIF-FILE" Name="function_gen_top.bif"/>
+  <File Type="BOOT-BIF-FILE" Name="function_gen_top_boot.bif"/>
+  <File Type="PL-BIF-FILE" Name="function_gen_top_pld.bif"/>
+  <File Type="LTX-FILE" Name="function_gen_top.ltx"/>
+  <File Type="BOOT-LTX-FILE" Name="function_gen_top_boot.ltx"/>
+  <File Type="PL-LTX-FILE" Name="function_gen_top_pld.ltx"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="function_gen_top.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="function_gen_top.sysdef"/>
+  <File Type="BG-BGN" Name="function_gen_top.bgn"/>
+  <File Type="BG-DRC" Name="function_gen_top.drc"/>
+  <File Type="RDI-RDI" Name="function_gen_top.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="ROUTE-RQS" Name="function_gen_top_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="function_gen_top_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/modules/display_driver.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA-function-gen/code/modules/display_driver.vhd"/>
+        <Attr Name="ImportTime" Val="1776344821"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/modules/gen_sqr.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA-function-gen/code/modules/gen_sqr.vhd"/>
+        <Attr Name="ImportTime" Val="1776344821"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/modules/bin2seg.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA-function-gen/code/modules/bin2seg.vhd"/>
+        <Attr Name="ImportTime" Val="1776344821"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/modules/bidir_counter.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA-function-gen/code/modules/bidir_counter.vhd"/>
+        <Attr Name="ImportTime" Val="1776344821"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/modules/display_driver_direct_data.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA-function-gen/code/modules/display_driver_direct_data.vhd"/>
+        <Attr Name="ImportTime" Val="1776344821"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/modules/sig_name_encoder.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA-function-gen/code/modules/sig_name_encoder.vhd"/>
+        <Attr Name="ImportTime" Val="1776344821"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../ampl_ch.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ampl_ch.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/bidir_counter.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/modules/clk_en.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA-function-gen/code/modules/clk_en.vhd"/>
+        <Attr Name="ImportTime" Val="1776344821"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/modules/counter.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA-function-gen/code/modules/counter.vhd"/>
+        <Attr Name="ImportTime" Val="1776344821"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/modules/debounce.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA-function-gen/code/modules/debounce.vhd"/>
+        <Attr Name="ImportTime" Val="1776344821"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/display_driver_direct_data.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/gen_sin.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/gen_sqr.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/gen_tri.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mux.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sig_name_encoder.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/function_gen_top.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="function_gen_top"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/FPGA-function-gen/nexys.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA-function-gen/nexys.xdc"/>
+        <Attr Name="ImportTime" Val="1776344821"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/function_gen_top.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
