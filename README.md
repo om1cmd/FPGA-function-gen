@@ -61,7 +61,7 @@ We realized that this is a problem only after we started testing with hardware a
 |FFs|179|
 
 ## New components
-### 1. [Bidirectional counter](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/bidir_counter.vhd)
+### [1. Bidirectional counter](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/bidir_counter.vhd)
 Bidirectional counter is a synchronous counter with configurable length.
 
 #### **Generics**
@@ -80,7 +80,7 @@ Bidirectional counter is a synchronous counter with configurable length.
 #### **Simulation**
 ![bidir_counter_sim](images/simulations/bidir_counter.png)
 
-### 2. [Multiplexer](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/mux.vhd)
+### [2. Multiplexer](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/mux.vhd)
 Multiplexer is just that. A simple 4 to 1 multiplexer. It takes in an input vector that selects which input is routed to its output.
 
 #### **Generics**
@@ -99,7 +99,7 @@ Multiplexer is just that. A simple 4 to 1 multiplexer. It takes in an input vect
 #### **Simulation**
 ![mux_sim](images/simulations/mux.png)
 
-### 3. [sig_name_encoder](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/sig_name_encoder.vhd)
+### [3. sig_name_encoder](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/sig_name_encoder.vhd)
 This block generates a 56 bit long vector with data for 7 segment displays. Each output bit coresponds to one segment of 8 available 7 segment displays. It looks at current selected signal and period and outputs the name of the selected signal and selected period to be displayed by display_driver_direct_data.
 
 #### **Inputs**
@@ -112,7 +112,7 @@ This block generates a 56 bit long vector with data for 7 segment displays. Each
 #### **Simulation**
 ![sig_name_encoder_sim](images/simulations/sig_name_encoder.png)
 
-### 4. [display_driver_direct_data](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/display_driver_direct_data.vhd)
+### [4. display_driver_direct_data](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/display_driver_direct_data.vhd)
 This is a display driver block that works on a similar principle as display_driver writen on computer excercises. It was modified to take a 56 bit long input vector where each bit coresponds to 1 segment of all 8 seven segment displays. This allows us light up arbitrary segments, which is useful, because we need to display a lot of different letters that are not available in the original display_driver.
 
 #### **Inputs**
@@ -126,7 +126,7 @@ This is a display driver block that works on a similar principle as display_driv
 
 ![display_driver_direct_data_sim](images/simulations/display_driver_direct_data.png)
 
-### 5. [gen_sqr](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/gen_sqr.vhd)
+### [5. gen_sqr](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/gen_sqr.vhd)
 This block generates a square wave. It alternates between 2 states, all zeros and all ones.
 
 #### **Inputs**
@@ -140,7 +140,7 @@ This block generates a square wave. It alternates between 2 states, all zeros an
 ![gen_sqr_sim](images/simulations/gen_sqr.png)
 Simulation does not show an analog waveform, because vivado would just connect individual points, making it look like a triangular waveform instead of a square one.
 
-### 6. [gen_tri](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/gen_tri.vhd)
+### [6. gen_tri](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/gen_tri.vhd)
 This block generates a triangular wave. It has an internal bidirectional 8 bit counter that starts counting up and once it reaches 255 direction flips and it starts counting down. At 0 it flips again.
 
 #### **Inputs**
@@ -153,7 +153,7 @@ This block generates a triangular wave. It has an internal bidirectional 8 bit c
 
 ![gen_tri_sim](images/simulations/gen_tri.png)
 
-### 7. [gen_saw](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/imports/modules/counter.vhd)
+### [7. gen_saw](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/imports/modules/counter.vhd)
 This is not a new block, but we wanted to have all waveforms simulated. Gen_saw is a simple up counter.
 
 #### **Inputs**
@@ -166,7 +166,7 @@ This is not a new block, but we wanted to have all waveforms simulated. Gen_saw 
 
 ![gen_saw_sim](images/simulations/gen_saw.png)
 
-### 8. [gen_sin](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/gen_sin.vhd)
+### [8. gen_sin](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/gen_sin.vhd)
 This block generates a sinusoidal wave. This is the only code that was not written by us, because we didn't really know how to approach this. So instead we found [this code](https://surf-vhdl.com/how-to-generate-sine-samples-in-vhdl/) and modified it slightly to work with out setup. AI was used to help with this task.
 
 #### **Inputs**
@@ -179,7 +179,7 @@ This block generates a sinusoidal wave. This is the only code that was not writt
 
 ![gen_sin_sim](images/simulations/gen_sin.png)
 
-### 9. [ampl_ch](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/ampl_ch.vhd)
+### [9. ampl_ch](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/ampl_ch.vhd)
 This block allows for changing output amplitude. It simply divides the 8 bit output signal by bitshifting it to the right by 1, 2 or 3 bits based on a current value comming from switches on the board.
 
 #### **Inputs**
