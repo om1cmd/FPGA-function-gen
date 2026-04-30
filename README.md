@@ -9,7 +9,7 @@ This project is a function generator implemented on an Nexys A7 50T FPGA develop
     - Sinusoidal
 
 2. #### Ability to generate signals of 4 different frequencies.
-    - See [Problems](###Problems) in the full description for more information.
+    - See *Problems* in the full description for more information.
 
 3. #### Ability to select 4 different output amplitudes
     - Output amplitude is limited to 3.3 V and final amplitude control block can devide it by 2, 4 or 8 times, giving us 4 different amplitudes.
@@ -55,10 +55,10 @@ This design by far not perfect. It's biggest problem is that each signal generat
 We realized that this is a problem only after we started testing with hardware and we couldn't fix this in time. We tried slowing down *gen_sqr* by using an internal 8 bit counter, but for some reason our implementation did not work. Since we didn't have any more time we decided to leave this issue in. Current *clock_enable* values are set so that triangular wave (the slowest one) runs at the correct frequencies of 1 kHz, 10 kHz, 100 kHz and 200 kHz. All other blocks will run on different frequencies and the displayed frequency it therefore invalid for them.
 
 ### Resource usage
-|Type|Used|
-|---|---|
-|LUTs|112|
-|FFs|179|
+|Type|Used|Available|
+|---|---|---|
+|LUTs|112|32600|
+|FFs|179|65200|
 
 ## New components
 ### [1. Bidirectional counter](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/bidir_counter.vhd)
