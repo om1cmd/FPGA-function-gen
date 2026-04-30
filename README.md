@@ -59,6 +59,7 @@ We realized that this is a problem only after we started testing with hardware a
 |---|---|---|
 |LUTs|112|32600|
 |FFs|179|65200|
+|Bonded IOB|32|210|
 
 ## New components
 ### [1. Bidirectional counter](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/bidir_counter.vhd)
