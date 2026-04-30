@@ -9,7 +9,7 @@ This project is a function generator implemented on an Nexys A7 50T FPGA develop
     - Sinusoidal
 
 2. #### Ability to generate signals of 4 different frequencies.
-    - See *Problems* in the full description for more information.
+    - See [Problems](###Problems) in the full description for more information.
 
 3. #### Ability to select 4 different output amplitudes
     - Output amplitude is limited to 3.3 V and final amplitude control block can devide it by 2, 4 or 8 times, giving us 4 different amplitudes.
