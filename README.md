@@ -54,6 +54,12 @@ This desing by far not perfect. It's biggest problem is that each signal generat
 
 We realized that this is a problem only after we started testing with hardware and we couldn't fix this in time. We tried slowing down *gen_sqr* by using an internal 8 bit counter, but for some reason out implementation did not work. Since we didn't have any more time we decided to leave this issue in. Current *clock_enable* values are set so that triangular wave (the slowest one) runs at the correct frequencies of 1 kHz, 10 kHz, 100 kHz and 200 kHz. All other blocks will run on different frequencies and the displayed frequency it therefore invalid for them.
 
+### Resource usage
+|Type|Used|
+|---|---|
+|LUTs|112|
+|FFs|179|
+
 ## New components
 ### 1. [Bidirectional counter](vivado_project/function_gen_top/function_gen_top.srcs/sources_1/new/bidir_counter.vhd)
 Bidirectional counter is a synchronous counter with configurable length.
