@@ -16,6 +16,8 @@ This project is a function generator implemented on an Nexys A7 50T FPGA develop
 
 The output is routed to Pmod headers and converted to analog voltages using external R-2R ladder DAC.
 
+#### [Video demonstrating functions](https://youtu.be/uYpbQfqS_2A)
+
 ## Use of AI
 LLMs were used during work on this project mainly to help us troubleshoot issues. AI was not used to generate complete blocks, but rather as a tool to discover new possibilities of implementation. All of the generated code was reviewed by us and we only used it, if we understood it.
 
